@@ -56,7 +56,7 @@ ROOT_URLCONF = 'instblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], #give templates its path
+        'DIRS': ['templates'], #give templates its path
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

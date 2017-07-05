@@ -1,4 +1,7 @@
+
+
 h1 {
+	font-family:  cursive;
 	color: #777777;
 }
 body{
@@ -8,3 +11,12 @@ body{
 .navbar-brand{
 	font-family: 'Satisfy', cursive;
 }
+
+p{
+	font-family:  cursive;
+}
+
+h3{
+	font-family:  cursive;
+}
+

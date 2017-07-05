@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from django.conf import settings
 from django.db import models
 from django.core.urlresolvers import reverse #to use get_absolute_url
 from django.db.models.signals import pre_save # to implement slug (a dynamic name for posts not just the id)
@@ -12,6 +13,8 @@ def upload_location(instance, filename):
 
 
 class Post(models.Model):
+	
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1) #imp
 	title = models.CharField(max_length=120)
 	slug = models.SlugField(unique=True)
 	image = models.ImageField(upload_to=upload_location,
@@ -21,6 +24,7 @@ class Post(models.Model):
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
 	content = models.TextField()
+	
 	updated = models.DateTimeField(auto_now = True, auto_now_add = False) #auto_now = True coz it needs to be updated
 	timestamp = models.DateTimeField(auto_now =False, auto_now_add = True) #auto_now = False coz it doesnt need to be updated,its the time when post was created
 
